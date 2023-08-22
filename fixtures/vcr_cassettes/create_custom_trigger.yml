@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://workflows.rise-ai.com/triggers?shop_url=andy-test-us.myshopify.com
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"Z8PcwW2JWjjEf5J6SiMOJNDVUoori2LGRLV1bhTONSe","scheme":{"variables":[{"path":"customer_email","type":"Email","title":"Customer
+        Email"},{"path":"credit_amount","type":"Float","title":"Credit Amount"}],"meta":{"title":"PostCo
+        Trigger","description":"Generate Rise.ai store credit for PostCo Return"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzaG9wX3VybCI6ImFuZHktdGVzdC11cy5teXNob3BpZnkuY29tIn0.6H7wvTfH4H7XWeW1_bGtixk_6FrKazR_N0N7zRqrrmQ
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 21 Aug 2023 10:20:52 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      access-control-allow-origin:
+      - "*"
+      etag:
+      - W/"21c-znAzIlfHAczDSuLmIRus7jPYivM"
+      x-powered-by:
+      - Express
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7fa2255b6e693900-KUL
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"trigger":{"id":167,"trigger_id":"25b9554d-0bda-402f-bd17-b49eb16b979d","shop_url":"andy-test-us.myshopify.com","variables":[{"path":"customer_email","type":"Email","title":"Customer
+        Email"},{"path":"credit_amount","type":"Float","title":"Credit Amount"}],"meta":{"title":"PostCo
+        Trigger","description":"Generate Rise.ai store credit for PostCo Return","source":"Postco"},"updated_at":"2023-08-21T10:20:52.824Z","created_at":"2023-08-21T10:20:52.824Z"},"reqUrl":"https://workflows.rise-ai.com/execute/25b9554d-0bda-402f-bd17-b49eb16b979d"}'
+  recorded_at: Mon, 21 Aug 2023 10:20:52 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://workflows.rise-ai.com/execute/25b9554d-0bda-402f-bd17-b49eb16b979d
+    body:
+      encoding: UTF-8
+      string: '{"customer_email":"marcus@postco.io","credit_amount":100}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      date:
+      - Tue, 22 Aug 2023 07:25:01 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      content-length:
+      - '8'
+      connection:
+      - keep-alive
+      access-control-allow-origin:
+      - "*"
+      etag:
+      - W/"8-YaBXLEiT7zQxEyDYTILfiL6oPhE"
+      x-powered-by:
+      - Express
+      x-rise-api-bucket-consumed:
+      - '1'
+      x-rise-api-bucket-limit:
+      - '20'
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7fa961201ad338a5-KUL
+    body:
+      encoding: UTF-8
+      string: Accepted
+  recorded_at: Tue, 22 Aug 2023 07:25:01 GMT
+recorded_with: VCR 6.2.0
