@@ -12,7 +12,9 @@ module RiseAi
       token = JWT.encode(payload, RiseAi.config.client_secret, "HS256")
       headers = {"Authorization" => "Bearer #{token}"}
 
-      CustomTrigger.new.post_request(url, body: body, headers: headers)
+      response = CustomTrigger.new.post_request(url, body: body, headers: headers)
+
+      JSON.parse(response.body)["trigger"]
     end
 
     def self.execute(trigger_key, body)

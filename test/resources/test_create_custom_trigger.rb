@@ -31,24 +31,34 @@ class TestCreateCustomTrigger < Minitest::Test
             }
           }
         )
-      data = JSON.parse(response.body, symbolize_names: true)[:trigger]
-      refute_nil data[:id]
-      refute_nil data[:trigger_id]
-      assert_equal(ENV.fetch("RISE_AI_TEST_SHOPIFY_DOMAIN"), data[:shop_url])
+      refute_nil response["id"]
+      refute_nil response["trigger_id"]
+      assert_equal(
+        ENV.fetch("RISE_AI_TEST_SHOPIFY_DOMAIN"),
+        response["shop_url"]
+      )
       assert_equal(
         [
-          {path: "customer_email", type: "Email", title: "Customer Email"},
-          {path: "credit_amount", type: "Float", title: "Credit Amount"}
+          {
+            "path" => "customer_email",
+            "type" => "Email",
+            "title" => "Customer Email"
+          },
+          {
+            "path" => "credit_amount",
+            "type" => "Float",
+            "title" => "Credit Amount"
+          }
         ],
-        data[:variables]
+        response["variables"]
       )
       assert_equal(
         {
-          title: "PostCo Trigger",
-          description: "Generate Rise.ai store credit for PostCo Return",
-          source: "Postco"
+          "title" => "PostCo Trigger",
+          "description" => "Generate Rise.ai store credit for PostCo Return",
+          "source" => "Postco"
         },
-        data[:meta]
+        response["meta"]
       )
     end
   end
