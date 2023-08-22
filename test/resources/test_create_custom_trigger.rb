@@ -5,6 +5,7 @@ require "test_helper"
 class TestCreateCustomTrigger < Minitest::Test
   def setup
     RiseAi.client_secret = ENV.fetch("RISE_AI_CLIENT_SECRET")
+    RiseAi.client_id = ENV.fetch("RISE_AI_CLIENT_ID")
   end
 
   def test_custom_trigger_creation
@@ -13,7 +14,7 @@ class TestCreateCustomTrigger < Minitest::Test
         RiseAi::CustomTrigger.create(
           ENV.fetch("RISE_AI_TEST_SHOPIFY_DOMAIN"),
           {
-            client_id: ENV.fetch("RISE_AI_CLIENT_ID"),
+            client_id: RiseAi.config.client_id,
             scheme: {
               variables: [
                 {

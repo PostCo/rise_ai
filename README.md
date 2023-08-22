@@ -20,7 +20,8 @@ If bundler is not being used to manage dependencies, install the gem by executin
 1. Set your own Rise.ai secret key in your app's `config/initializers/rise_ai.rb`
 
 ```ruby
-RiseAi.client_secrent = "your_secret_key"
+RiseAi.client_secret = "your_client_secret"
+RiseAi.client_id = "your_client_id"
 ```
 
 ### Custom Trigger Resource

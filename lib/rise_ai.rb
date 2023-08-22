@@ -19,5 +19,6 @@ module RiseAi
 
     # User configurable options
     def_delegators :@config, :client_secret, :client_secret=
+    def_delegators :@config, :client_id, :client_id=
   end
 end

@@ -5,6 +5,7 @@ require "test_helper"
 class TestExecuteCustomTrigger < Minitest::Test
   def setup
     RiseAi.client_secret = ENV.fetch("RISE_AI_CLIENT_SECRET")
+    RiseAi.client_id = ENV.fetch("RISE_AI_CLIENT_ID")
   end
 
   def test_custom_trigger_execution
