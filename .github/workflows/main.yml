@@ -1,5 +1,10 @@
 name: Ruby
 
+env:
+  RISE_AI_CLIENT_SECRET: ${{ secrets.RISE_AI_CLIENT_SECRET }}
+  RISE_AI_CLIENT_ID: ${{ secrets.RISE_AI_CLIENT_ID }}
+  RISE_AI_TEST_SHOPIFY_DOMAIN: ${{ secrets.RISE_AI_TEST_SHOPIFY_DOMAIN }}
+
 on:
   push:
     branches:
