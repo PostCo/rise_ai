@@ -22,7 +22,9 @@ module RiseAi
         raise Error,
           "Not acceptable. Missing mandatory fields: #{error_message}"
       when 409
-        raise Error, "Conflict: #{error_message}"
+        raise Error, "Conflict: Only one custom trigger can be created."
+      when 502
+        raise Error, "Bad gateway: Custom trigger is not enabled for this Shopify domain"
       when 503
         raise Error, "Timed out: #{error_message}"
       end
