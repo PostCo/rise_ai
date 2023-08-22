@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Wei Zhe Heng"]
   spec.email = ["marcushwz@gmail.com"]
 
-  spec.summary = "Rise.ai API Wrapper"
+  spec.summary = "Ruby gem for Rise.ai API"
   spec.homepage = "https://github.com/PostCo/rise_ai"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

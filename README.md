@@ -1,24 +1,60 @@
 # RiseAi
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rise_ai`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby gem for Rise.ai API
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add rise_ai
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install rise_ai
 
 ## Usage
 
-TODO: Write usage instructions here
+**NOTE: Currently only supports the CustomTrigger resource**
+
+### Configuration
+1. Set your own Rise.ai secret key in your app's `config/initializers/rise_ai.rb`
+
+```ruby
+RiseAi.client_secrent = "your_secret_key"
+```
+
+### Custom Trigger Resource
+1. Creating a Custom Trigger
+
+```ruby
+RiseAi::CustomTrigger.create(
+  "shopify_domain",
+  {
+    cliend_id: "your_client_id",
+    scheme: {
+      variables: [
+        {
+          path: "customer_email",
+          type: "Email",
+          title: "Customer Email"
+        }
+      ],
+      meta: {
+        title: "Trigger title",
+        description: "Trigger description"
+      }
+    }
+  }
+)
+```
+
+2. Executing a trigger
+```ruby
+RiseAi::CustomTrigger.execute(
+  "trigger_id",
+  { customer_email: "test@example.com", credit_amount: 100 }
+)
+```
 
 ## Development
 
@@ -28,7 +64,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rise_ai. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rise_ai/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/PostCo/rise_ai. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rise_ai/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
